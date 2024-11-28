@@ -1,30 +1,46 @@
-import { Button, Navbar } from "flowbite-react";
+import { Navbar } from "flowbite-react";
+import { BsCart3 } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
+
+import "../styles/NavBar.css";
 
 export default function NavigationBar() {
   return (
     <>
       <Navbar fluid rounded>
-        <Navbar.Brand href="https://flowbite-react.com">
+        <Navbar.Brand href="/">
           <img
             src="/favicon.svg"
             className="mr-3 h-6 sm:h-9"
-            alt="Flowbite React Logo"
+            alt="Femme Logo"
           />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             Femme
           </span>
         </Navbar.Brand>
-        <div className="flex md:order-2">
-          <Button>Get started</Button>
+
+        <div className="flex md:order-2 list-none">
+          <Navbar.Link as={NavLink} to="/cart" className="flex">
+            <BsCart3 className="mr-2 h-5 w-5" />
+            Cart
+          </Navbar.Link>
+
           <Navbar.Toggle />
         </div>
+
         <Navbar.Collapse>
-          <Navbar.Link href="#" active>
+          <Navbar.Link as={NavLink} to="/">
             Home
           </Navbar.Link>
-          <Navbar.Link href="#">Services</Navbar.Link>
-          <Navbar.Link href="#">Clothes</Navbar.Link>
-          <Navbar.Link href="#">Accessories</Navbar.Link>
+          <Navbar.Link as={NavLink} to="/clothes">
+            Clothes
+          </Navbar.Link>
+          <Navbar.Link as={NavLink} to="/shoes">
+            Shoes
+          </Navbar.Link>
+          <Navbar.Link as={NavLink} to="/accessories">
+            Accessories
+          </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </>
