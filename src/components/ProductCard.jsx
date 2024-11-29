@@ -1,6 +1,16 @@
 import { Card } from "flowbite-react";
+import { getAllClothes } from "../data/clothes";
+import { useRecoilState } from "recoil";
+import { clothesState } from "../states/clothes";
+import { useEffect } from "react";
 
 export default function ProductCard() {
+  const [clothes, setClothes] = useRecoilState(clothesState);
+
+  useEffect(() => {
+    getAllClothes().then(setClothes);
+  });
+
   return (
     <>
       <Card

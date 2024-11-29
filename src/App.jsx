@@ -18,6 +18,10 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
+        {/* Layout
+        - header komponent (skicka props för att ändra header information dynamiskt)
+        - 
+        */}
         <Route path="clothes" element={<ClothesPage />} />
         <Route path="shoes" element={<ShoesPage />} />
         <Route path="accessories" element={<AccessoriesPage />} />
