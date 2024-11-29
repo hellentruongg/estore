@@ -11,6 +11,7 @@ import ShoesPage from "./pages/Shoes";
 import AccessoriesPage from "./pages/Accessories";
 import HomePage from "./pages/Home";
 import CartPage from "./pages/Cart";
+import ProductCard from "./components/ProductCard"; //ta bort sen
 
 function App() {
   const router = createBrowserRouter(
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ProductCard />
     </>
   );
 }
