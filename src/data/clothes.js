@@ -7,5 +7,5 @@ export async function getAllClothes() {
 
   const data = await response.json();
 
-  return data.products;
+  return data.clothes;
 }
