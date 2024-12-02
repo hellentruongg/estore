@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Ribbed Bandeau Top",
       "category": "basics",
-      "image": "./images/garment-1.jpg",
+      "image": "../assets/images/garment-1.jpg",
       "colors": ["Red", "Green", "Purple"],
       "price": "19.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -13,7 +13,7 @@
       "id": 2,
       "title": "Formal Blazer Dress",
       "category": "dresses",
-      "image": "./images/garment-2.jpg",
+      "image": "../assets/images/garment-2.jpg",
       "colors": ["Black", "Blue", "Gray"],
       "price": "49.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -22,7 +22,7 @@
       "id": 3,
       "title": "Classic Body Suit",
       "category": "bodysuits",
-      "image": "./images/garment-3.jpg",
+      "image": "../assets/images/garment-3.jpg",
       "colors": ["Black", "Beige", "Ivory", "Red"],
       "price": "34.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -31,7 +31,7 @@
       "id": 4,
       "title": "Satin Blazer Pants Set",
       "category": "sets",
-      "image": "./images/garment-4.jpg",
+      "image": "../assets/images/garment-4.jpg",
       "colors": ["Pink", "Blue", "Orange"],
       "price": "49.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -40,7 +40,7 @@
       "id": 5,
       "title": "Floral Ruffled Skirt",
       "category": "skirts",
-      "image": "./images/garment-5.jpg",
+      "image": "../assets/images/garment-5.jpg",
       "colors": ["White", "Pink", "Blue"],
       "price": "29.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -49,7 +49,7 @@
       "id": 6,
       "title": "Broderie Princess Dress",
       "category": "dresses",
-      "image": "./images/garment-6.jpg",
+      "image": "../assets/images/garment-6.jpg",
       "colors": ["Pink", "White", "Blue"],
       "price": "34.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -58,7 +58,7 @@
       "id": 7,
       "title": "Leopard Fur Coat",
       "category": "coats",
-      "image": "./images/garment-7.jpg",
+      "image": "../assets/images/garment-7.jpg",
       "colors": ["Brown", "Beige"],
       "price": "129.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -67,7 +67,7 @@
       "id": 8,
       "title": "Rockstar Blazer Skirt Set",
       "category": "sets",
-      "image": "./images/garment-8.jpg",
+      "image": "../assets/images/garment-8.jpg",
       "colors": ["Black", "Silver", "Gray"],
       "price": "64.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -76,7 +76,7 @@
       "id": 9,
       "title": "Cozy Ribbed Vest",
       "category": "knitwear",
-      "image": "./images/garment-9.jpg",
+      "image": "../assets/images/garment-9.jpg",
       "colors": ["Gray", "White", "Pink"],
       "price": "19.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -85,7 +85,7 @@
       "id": 10,
       "title": "Lace Bralette Top",
       "category": "bras",
-      "image": "./images/garment-10.jpg",
+      "image": "../assets/images/garment-10.jpg",
       "colors": ["Pink", "Black", "Green", "White"],
       "price": "29.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -94,7 +94,7 @@
       "id": 11,
       "title": "Winter Biker Jacket",
       "category": "jackets",
-      "image": "./images/garment-11.jpg",
+      "image": "../assets/images/garment-11.jpg",
       "colors": ["Black", "Brown"],
       "price": "79.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -103,7 +103,7 @@
       "id": 12,
       "title": "Classic Satin Skirt",
       "category": "skirts",
-      "image": "./images/garment-12.jpg",
+      "image": "../assets/images/garment-12.jpg",
       "colors": ["Champagne", "Black"],
       "price": "39.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -112,7 +112,7 @@
       "id": 13,
       "title": "Formal Glencheck Suit Set",
       "category": "sets",
-      "image": "./images/garment-13.jpg",
+      "image": "../assets/images/garment-13.jpg",
       "colors": ["Pink/Gray", "Black/Gray"],
       "price": "89.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -121,7 +121,7 @@
       "id": 14,
       "title": "Chic Bodycon Ribbed Dress",
       "category": "dresses",
-      "image": "./images/garment-14.jpg",
+      "image": "../assets/images/garment-14.jpg",
       "colors": ["Green", "Black", "Pink"],
       "price": "34.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -130,7 +130,7 @@
       "id": 15,
       "title": "Sleeveless Lace Dress",
       "category": "dresses",
-      "image": "./images/garment-15.jpg",
+      "image": "../assets/images/garment-15.jpg",
       "colors": ["Ivory", "Green"],
       "price": "64.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -139,7 +139,7 @@
       "id": 16,
       "title": "Lace up Faux Leather Pants",
       "category": "pants",
-      "image": "./images/garment-16.jpg",
+      "image": "../assets/images/garment-16.jpg",
       "colors": ["Black", "Brown", "White"],
       "price": "54.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -148,7 +148,7 @@
       "id": 17,
       "title": "Spring Parka Jacket",
       "category": "jackets",
-      "image": "./images/garment-17.jpg",
+      "image": "../assets/images/garment-17.jpg",
       "colors": ["Pink", "Green"],
       "price": "44.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -157,7 +157,7 @@
       "id": 18,
       "title": "Ruched Halter Bikini Top",
       "category": "swimwear",
-      "image": "./images/garment-18.jpg",
+      "image": "../assets/images/garment-18.jpg",
       "colors": ["Green", "Black", "Red"],
       "price": "19.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -166,7 +166,7 @@
       "id": 19,
       "title": "Casual Shirt Dress",
       "category": "dresses",
-      "image": "./images/garment-19.jpg",
+      "image": "../assets/images/garment-19.jpg",
       "colors": ["Blue", "White", "Pink", "Beige"],
       "price": "40.00",
       "sizes": ["XS", "S", "M", "L"]
@@ -175,7 +175,7 @@
       "id": 20,
       "title": "Comfortable Sport Bra",
       "category": "bras",
-      "image": "./images/garment-20.jpg",
+      "image": "../assets/images/garment-20.jpg",
       "colors": ["Black", "White", "Gray"],
       "price": "29.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -184,7 +184,7 @@
       "id": 21,
       "title": "Cozy Jumper Jogger Set",
       "category": "sets",
-      "image": "./images/garment-21.jpg",
+      "image": "../assets/images/garment-21.jpg",
       "colors": ["Black", "Yellow", "Brown", "Green", "Beige"],
       "price": "69.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
@@ -193,7 +193,7 @@
       "id": 22,
       "title": "Soft Turtle Neck Top",
       "category": "sweaters",
-      "image": "./images/garment-22.jpg",
+      "image": "../assets/images/garment-22.jpg",
       "colors": ["Black", "Beige", "Brown", "Gray"],
       "price": "19.99",
       "sizes": ["XS", "S", "M", "L"]
@@ -202,7 +202,7 @@
       "id": 23,
       "title": "Striped Wide Leg Pants",
       "category": "pants",
-      "image": "./images/garment-23.jpg",
+      "image": "../assets/images/garment-23.jpg",
       "colors": ["Black/White", "Gray/White"],
       "price": "39.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
