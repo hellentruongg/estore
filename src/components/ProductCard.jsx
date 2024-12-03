@@ -1,27 +1,35 @@
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ProductCard({ garment }) {
-  // function navigateToProductView() {
-  //   // OBS! useParams has to be used within a route with a path that has a dynamic parameter.
-  //   // Option A:
-  //   // 1. use useParams in the ClothesPage and then pass props (params) to the ProductCard.
-  //   // 2. use useNavigate to navigate to the ProductViewPage
-  //   // Option B:
-  //   // 1.  use useParams in the ProductViewPage and the find the the id that match the url id
-  //   // 2. display the product information
-  // }
+  function navigateToProductViewPage() {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const pathname = location.pathname;
+
+    // check if the location match the a specific route path
+    // if match, then navigate to the corresponding page
+    if (pathname === "/clothes") {
+      navigate("/clothes/" + garment.id);
+      // } else if (pathname === "/shoes") {
+      //   navigate("/clothes/" + shoe.id);
+      // } else if (pathname === "/accessories") {
+      //   navigate("/clothes/" + accessories.id);
+    }
+  }
 
   return (
     <>
       <Card
+        onClick={navigateToProductViewPage}
         className="max-w-sm"
         imgAlt="Meaningful alt text for an image that is not purely decorative"
         imgSrc={garment.image}
       >
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="text-m font-semibold tracking-tight text-gray-900 dark:text-white">
           {garment.title}
         </h5>
-        <p className="text-2xl font-bold text-gray-900 dark:text-white">
+        <p className="text-xl font-bold text-gray-900 dark:text-white">
           €{garment.price}
         </p>
       </Card>
