@@ -1,4 +1,4 @@
-import { Card } from "flowbite-react";
+import { Card, Button } from "flowbite-react";
 
 export default function ProductCard({ garment }) {
   // function navigateToProductView() {
@@ -21,7 +21,7 @@ export default function ProductCard({ garment }) {
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {garment.title}
         </h5>
-        <p className="text-3xl font-bold text-gray-900 dark:text-white">
+        <p className="text-2xl font-bold text-gray-900 dark:text-white">
           €{garment.price}
         </p>
       </Card>
