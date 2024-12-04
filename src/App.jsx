@@ -12,7 +12,7 @@ import ShoesPage from "./pages/Shoes";
 import AccessoriesPage from "./pages/Accessories";
 import HomePage from "./pages/Home";
 import CartPage from "./pages/Cart";
-import ProductViewPage from "./pages/ProductView";
+// import ProductViewPage from "./pages/ProductView";
 
 function App() {
   const router = createBrowserRouter(
@@ -26,7 +26,7 @@ function App() {
         */}
         <Route path="clothes" element={<ClothesLayout />}>
           <Route index element={<ClothesPage />} />
-          <Route path=":id" element={<ProductViewPage />} />
+          {/* <Route path=":id" element={<ProductViewPage />} /> */}
         </Route>
         <Route path="shoes" element={<ShoesPage />} />
         <Route path="accessories" element={<AccessoriesPage />} />

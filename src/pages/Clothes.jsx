@@ -8,10 +8,6 @@ import ProductCard from "../components/ProductCard";
 export default function ClothesPage() {
   const [clothes, setClothes] = useRecoilState(clothesState);
 
-  useEffect(() => {
-    getAllClothes().then(setClothes);
-  }, []);
-
   function createProductCard(garment) {
     return <ProductCard garment={garment} />;
   }
