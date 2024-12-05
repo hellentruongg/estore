@@ -22,8 +22,6 @@ export default function ProductViewPage() {
     if (pathname === "/clothes/" + id) {
       const garment = clothes.find((garment) => garment.id === parseInt(id));
 
-      console.log("Found garment:", garment);
-
       if (garment) {
         setProduct(garment);
       }
