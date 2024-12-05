@@ -2,11 +2,11 @@ import { Card } from "flowbite-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ProductCard({ garment }) {
-  function navigateToProductViewPage() {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const pathname = location.pathname;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const pathname = location.pathname;
 
+  function navigateToProductViewPage() {
     // check if the location match the a specific route path
     // if match, then navigate to the corresponding page
     if (pathname === "/clothes") {

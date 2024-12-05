@@ -1,6 +1,6 @@
 import { Card, Button, Spinner } from "flowbite-react";
 import { useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { clothesState } from "../states/clothes";
 import { useState } from "react";
@@ -11,6 +11,8 @@ export default function ProductViewPage() {
   // 1.  use useParams in the ProductViewPage and then find the the id that match the url id
   // 2. display the product information
 
+  Link;
+
   const { id } = useParams();
   const { pathname } = useLocation();
   const [clothes, setClothes] = useRecoilState(clothesState);
@@ -18,11 +20,14 @@ export default function ProductViewPage() {
 
   useEffect(() => {
     if (pathname === "/clothes/" + id) {
-      const garment = clothes.find((garment) => garment.id === id);
+      const garment = clothes.find((garment) => garment.id === parseInt(id));
+
+      console.log("Found garment:", garment);
 
       if (garment) {
         setProduct(garment);
       }
+
       // } else if (pathname === "/shoes/" + id) {
       //     //code here
       // } else if (pathname === "/accessories/" + id) {
