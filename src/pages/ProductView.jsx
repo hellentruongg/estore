@@ -17,6 +17,7 @@ export default function ProductViewPage() {
   const { pathname } = useLocation();
   const [clothes, setClothes] = useRecoilState(clothesState);
   const [product, setProduct] = useState(null);
+  const [size, setSize] = useState("Choose size:");
 
   useEffect(() => {
     if (pathname === "/clothes/" + id) {
@@ -45,10 +46,16 @@ export default function ProductViewPage() {
 
   function createSizeButton(size) {
     return (
-      <Button outline color="gray">
+      // varje knapp har en onClick funktion som får props (size)
+      // onClick funktionen ändrar texten "choose size:" (se nedan)
+      <Button onClick={() => displaySize(size)} outline color="gray">
         {size}
       </Button>
     );
+  }
+
+  function displaySize(size) {
+    setSize(`Chosen size: ${size}`);
   }
 
   return (
@@ -70,7 +77,7 @@ export default function ProductViewPage() {
         </p>
         <div>color</div>
         {/* När man väljer storlek: ändra "choose size:" till "chosen size:" och lägg till vald storlek. Ex. Chosen size: XS. */}
-        <p className="text-l text-gray-900 dark:text-gray-400">Choose size:</p>
+        <p className="text-l text-gray-900 dark:text-gray-400">{size}</p>
         <div className="flex flex-wrap gap-2">
           {sizes.map((size) => createSizeButton(size))}
         </div>
