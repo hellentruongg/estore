@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
 import { BsDashLg, BsPlusLg } from "react-icons/bs";
 
-export default function () {
+export default function CartItemCard({ cartItem }) {
   return (
     <>
       <img src="#" alt="" />
