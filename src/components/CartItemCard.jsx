@@ -2,18 +2,22 @@ import { Button } from "flowbite-react";
 import { BsDashLg, BsPlusLg } from "react-icons/bs";
 
 export default function CartItemCard({ cartItem }) {
+  const { title, price, color, sizes, image } = cartItem.product;
+
   return (
     <>
-      <img src="#" alt="" />
-      <p>Product</p>
+      <img src={image} alt="" />
+      <p>{title}</p>
 
       <br />
 
-      <p>Color</p>
+      <p>{color}</p>
 
       <br />
 
-      <p>Size</p>
+      {sizes.map((size) => (
+        <p>{size}</p>
+      ))}
 
       <br />
 
@@ -30,7 +34,7 @@ export default function CartItemCard({ cartItem }) {
 
       <br />
 
-      <p>Price</p>
+      <p>€{price}</p>
     </>
   );
 }
