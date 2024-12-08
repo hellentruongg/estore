@@ -11,7 +11,7 @@ export default function CartPage() {
 
       <section>
         {cart.map((cartItem) => {
-          return <CartItemCard cartItem={cartItem} />;
+          return <CartItemCard key={cartItem.product.id} cartItem={cartItem} />;
         })}
       </section>
     </>
