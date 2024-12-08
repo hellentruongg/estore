@@ -7,6 +7,7 @@ import {
 import "./App.css";
 import RootLayout from "./layout/Root";
 import ClothesLayout from "./layout/Clothes";
+import CartLayout from "./layout/Cart";
 import ClothesPage from "./pages/Clothes";
 import ShoesPage from "./pages/Shoes";
 import AccessoriesPage from "./pages/Accessories";
@@ -24,13 +25,16 @@ function App() {
         - header komponent (skicka props för att ändra header information dynamiskt)
         - 
         */}
+
         <Route path="clothes" element={<ClothesLayout />}>
           <Route index element={<ClothesPage />} />
           <Route path=":id" element={<ProductViewPage />} />
         </Route>
         <Route path="shoes" element={<ShoesPage />} />
         <Route path="accessories" element={<AccessoriesPage />} />
-        <Route path="cart" element={<CartPage />} />
+        <Route path="cart" element={<CartLayout />}>
+          <Route index element={<CartPage />} />
+        </Route>
       </Route>
     )
   );
