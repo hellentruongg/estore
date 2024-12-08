@@ -4,6 +4,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { clothesState } from "../states/clothes";
 import { useState } from "react";
+import { cartState } from "../states/cart";
 
 export default function ProductViewPage() {
   // OBS! useParams has to be used within a route with a path that has a dynamic parameter.
@@ -11,13 +12,12 @@ export default function ProductViewPage() {
   // 1.  use useParams in the ProductViewPage and then find the the id that match the url id
   // 2. display the product information
 
-  Link;
-
   const { id } = useParams();
   const { pathname } = useLocation();
   const [clothes, setClothes] = useRecoilState(clothesState);
   const [product, setProduct] = useState(null);
   const [size, setSize] = useState("Choose size:");
+  const [cart, setCart] = useRecoilState(cartState);
 
   useEffect(() => {
     if (pathname === "/clothes/" + id) {
@@ -58,6 +58,15 @@ export default function ProductViewPage() {
     setSize(`Chosen size: ${size}`);
   }
 
+  function addToCart() {
+    const cartItem = {
+      product: product,
+      amount: 1,
+    };
+
+    setCart([...cart, cartItem]);
+  }
+
   return (
     <>
       <Card
@@ -81,7 +90,7 @@ export default function ProductViewPage() {
         <div className="flex flex-wrap gap-2">
           {sizes.map((size) => createSizeButton(size))}
         </div>
-        <Button>Add to cart</Button>
+        <Button onClick={addToCart}>Add to cart</Button>
       </Card>
     </>
   );
