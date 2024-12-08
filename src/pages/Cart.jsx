@@ -1,11 +1,19 @@
-import CartItem from "../components/CartItem";
+import { useRecoilState } from "recoil";
+import { cartState } from "../states/cart";
+import CartItemCard from "../components/CartItemCard";
 
 export default function CartPage() {
+  const [cart, setCart] = useRecoilState(cartState);
+
   return (
     <>
       <h1>Cart Page</h1>
 
-      <CartItem />
+      <section>
+        {cart.map((cartItem) => {
+          return <CartItemCard cartItem={cartItem} />;
+        })}
+      </section>
     </>
   );
 }
