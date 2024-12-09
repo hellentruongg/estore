@@ -9,7 +9,7 @@ export default function ClothesPage() {
   const [clothes, setClothes] = useRecoilState(clothesState);
 
   function createProductCard(garment) {
-    return <ProductCard garment={garment} />;
+    return <ProductCard key={garment.id} garment={garment} />;
   }
 
   return (
