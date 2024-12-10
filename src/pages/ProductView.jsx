@@ -15,9 +15,10 @@ export default function ProductViewPage() {
   const { id } = useParams();
   const { pathname } = useLocation();
   const [clothes, setClothes] = useRecoilState(clothesState);
-  const [product, setProduct] = useState(null);
-  const [size, setSize] = useState("Choose size:");
   const [cart, setCart] = useRecoilState(cartState);
+  const [product, setProduct] = useState(null);
+  const [sizeText, setSizeText] = useState("Choose size:");
+  const [size, setSize] = useState("");
 
   useEffect(() => {
     if (pathname === "/clothes/" + id) {
@@ -48,23 +49,39 @@ export default function ProductViewPage() {
     return (
       // varje knapp har en onClick funktion som får props (size)
       // onClick funktionen ändrar texten "choose size:" (se nedan)
-      <Button onClick={() => displaySize(size)} outline color="gray">
+      <Button key={size} onClick={() => displaySize(size)} outline color="gray">
         {size}
       </Button>
     );
   }
 
   function displaySize(size) {
-    setSize(`Chosen size: ${size}`);
+    setSizeText(`Chosen size: ${size}`);
+    setSize(size);
   }
 
   function addToCart() {
-    const cartItem = {
+    const newCartItem = {
       product: product,
+      size: size,
       amount: 1,
     };
 
-    setCart([...cart, cartItem]);
+    const foundCartItem = cart.find((item) => item.product.id === product.id);
+
+    if (foundCartItem) {
+      setCart(
+        cart.map((item) => {
+          if (item !== foundCartItem) {
+            return item;
+          } else {
+            return { ...item, amount: item.amount + 1 };
+          }
+        })
+      );
+    } else {
+      setCart([...cart, newCartItem]);
+    }
   }
 
   return (
@@ -86,7 +103,7 @@ export default function ProductViewPage() {
         </p>
         <div>color</div>
         {/* När man väljer storlek: ändra "choose size:" till "chosen size:" och lägg till vald storlek. Ex. Chosen size: XS. */}
-        <p className="text-l text-gray-900 dark:text-gray-400">{size}</p>
+        <p className="text-l text-gray-900 dark:text-gray-400">{sizeText}</p>
         <div className="flex flex-wrap gap-2">
           {sizes.map((size) => createSizeButton(size))}
         </div>
