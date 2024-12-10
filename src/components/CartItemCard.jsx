@@ -7,6 +7,21 @@ export default function CartItemCard({ cartItem }) {
 
   console.log(amount);
 
+  // Uppgift 0
+  // hämta global variabel "cart"
+
+  // Uppgift 1
+  // om det är mer av samma produkt + storlek, visa summan
+
+  // Uppgift 2
+  // koppla en onClick-funktion till "minus" knappen
+  // om produken har en amount som är mindre än 0, ta bort produkten (mha filter)
+  // mappa genom "cart" och om produkten finns (kontrollera med id + storlek), minska på antalet, annars returnera produkten
+
+  //Uppgift 3
+  // koppla en onClick-funktion till "plus" knappen
+  // mappa genom "cart" och om produkten finns (kontrollera med id + storlek), öka på antalet, annars returnera produkten
+
   return (
     <>
       <img src={image} alt="" />
