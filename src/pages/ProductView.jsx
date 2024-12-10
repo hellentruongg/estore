@@ -51,13 +51,13 @@ export default function ProductViewPage() {
     return (
       // varje knapp har en onClick funktion som får props (size)
       // onClick funktionen ändrar texten "choose size:" (se nedan)
-      <Button key={size} onClick={() => displaySize(size)} outline color="gray">
+      <Button key={size} onClick={() => handleSize(size)} outline color="gray">
         {size}
       </Button>
     );
   }
 
-  function displaySize(size) {
+  function handleSize(size) {
     // setSizeText(`Chosen size: ${size}`);
     setSize(size);
     setSelectedSize(true);
