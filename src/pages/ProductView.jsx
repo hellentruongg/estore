@@ -17,8 +17,10 @@ export default function ProductViewPage() {
   const [clothes, setClothes] = useRecoilState(clothesState);
   const [cart, setCart] = useRecoilState(cartState);
   const [product, setProduct] = useState(null);
-  const [sizeText, setSizeText] = useState("Choose size:");
+  // const [sizeText, setSizeText] = useState("Choose size:");
   const [size, setSize] = useState("");
+  const [selectedSize, setSelectedSize] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     if (pathname === "/clothes/" + id) {
@@ -56,18 +58,27 @@ export default function ProductViewPage() {
   }
 
   function displaySize(size) {
-    setSizeText(`Chosen size: ${size}`);
+    // setSizeText(`Chosen size: ${size}`);
     setSize(size);
+    setSelectedSize(true);
+    setErrorMessage("");
   }
 
   function addToCart() {
+    if (!selectedSize) {
+      setErrorMessage("Please select a size before adding to cart.");
+      return; // Stop further execution
+    }
+
     const newCartItem = {
       product: product,
       size: size,
       amount: 1,
     };
 
-    const foundCartItem = cart.find((item) => item.product.id === product.id);
+    const foundCartItem = cart.find(
+      (item) => item.product.id === product.id && item.size === size
+    );
 
     if (foundCartItem) {
       setCart(
@@ -103,7 +114,13 @@ export default function ProductViewPage() {
         </p>
         <div>color</div>
         {/* När man väljer storlek: ändra "choose size:" till "chosen size:" och lägg till vald storlek. Ex. Chosen size: XS. */}
-        <p className="text-l text-gray-900 dark:text-gray-400">{sizeText}</p>
+        <p className="text-l text-gray-900 dark:text-gray-400">
+          {selectedSize ? `Chosen size: ${size}` : "Choose size:"}
+        </p>
+
+        {errorMessage && (
+          <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+        )}
         <div className="flex flex-wrap gap-2">
           {sizes.map((size) => createSizeButton(size))}
         </div>
