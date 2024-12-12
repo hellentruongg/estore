@@ -7,8 +7,7 @@ export default function CartPage() {
 
   return (
     <>
-      <h1>Cart Page</h1>
-
+      {cart.length === 0 && <h1>Your shopping cart is empty</h1>}
       <section>
         {cart.map((cartItem) => {
           return (
