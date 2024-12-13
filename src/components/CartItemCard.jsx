@@ -7,8 +7,6 @@ export default function CartItemCard({ cartItem }) {
   const { id, title, price, color, image } = cartItem.product;
   const { size, amount } = cartItem;
 
-  console.log(amount);
-
   const [cart, setCart] = useRecoilState(cartState);
 
   const foundCartItem = cart.find(
