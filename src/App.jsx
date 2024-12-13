@@ -20,12 +20,6 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        {/* 
-        - skapa layout för ClothesPage, ShoesPage och AccessoriesPage
-        - header komponent (skicka props för att ändra header information dynamiskt)
-        - 
-        */}
-
         <Route path="clothes" element={<ClothesLayout />}>
           <Route index element={<ClothesPage />} />
           <Route path=":id" element={<ProductViewPage />} />
