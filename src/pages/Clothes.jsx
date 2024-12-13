@@ -14,9 +14,6 @@ export default function ClothesPage() {
 
   return (
     <>
-      <h1>Clothes Page</h1>
-
-      {/* för varje produkt, skapa en ProductCard */}
       <section>{clothes.map((garment) => createProductCard(garment))}</section>
     </>
   );
