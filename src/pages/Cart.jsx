@@ -2,17 +2,24 @@ import { Button } from "flowbite-react";
 import { useRecoilState } from "recoil";
 import { cartState } from "../states/cart";
 import CartItemCard from "../components/CartItemCard";
+import { useState } from "react";
 
 export default function CartPage() {
   const [cart, setCart] = useRecoilState(cartState);
 
-  const shippingFee = 5;
+  let subTotal = 0;
+  let shippingFee = 0;
+  let totalPrice = 0;
 
-  const subTotal = cart.reduce((accumulator, item) => {
-    return accumulator + item.amount * item.product.price;
-  }, 0);
+  if (cart.length >= 1) {
+    subTotal = cart.reduce((accumulator, item) => {
+      return accumulator + item.amount * item.product.price;
+    }, 0);
 
-  const totalPrice = subTotal + shippingFee;
+    shippingFee = 0;
+
+    totalPrice = subTotal + shippingFee;
+  }
 
   return (
     <>
@@ -29,7 +36,7 @@ export default function CartPage() {
       </section>
       <br />
       <section>
-        <p>Subtotal: {subTotal}</p>
+        <p>Subtotal: €{subTotal}</p>
         <p>Shipping: €{shippingFee}</p>
         <p>Total: €{totalPrice}</p>
         <br />
