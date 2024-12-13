@@ -15,7 +15,7 @@ export default function ClothesLayout() {
     <>
       {/* Byt ut till header komponent här */}
       <header>
-        <h1 className="text-4xl">Header</h1>
+        <h1 className="text-4xl">Clothes Page</h1>
       </header>
       <br />
       <Outlet />
