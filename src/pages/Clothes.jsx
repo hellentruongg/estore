@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { clothesState } from "../states/clothes";
-import { getAllClothes } from "../data/clothes";
 
 import ProductCard from "../components/ProductCard";
 
