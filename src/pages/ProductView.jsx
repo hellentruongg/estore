@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil";
 import { clothesState } from "../states/clothes";
 import { useState } from "react";
 import { cartState } from "../states/cart";
+import { countState } from "../states/count";
 
 export default function ProductViewPage() {
   const { id } = useParams();
@@ -15,6 +16,7 @@ export default function ProductViewPage() {
   const [size, setSize] = useState("");
   const [selectedSize, setSelectedSize] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [count, setCount] = useRecoilState(countState);
 
   useEffect(() => {
     if (pathname === "/clothes/" + id) {
@@ -30,6 +32,10 @@ export default function ProductViewPage() {
       //     // code here
     }
   }, [id, clothes]);
+
+  useEffect(() => {
+    updateCartCount();
+  }, [cart]);
 
   if (!product) {
     return (
@@ -85,6 +91,18 @@ export default function ProductViewPage() {
       setCart([...cart, newCartItem]);
     }
   }
+
+  function updateCartCount() {
+    const totalAmount = cart.reduce((accumulator, item) => {
+      return accumulator + item.amount;
+    }, 0);
+
+    console.log(totalAmount);
+
+    setCount(totalAmount);
+  }
+
+  // Styling
 
   return (
     <>
