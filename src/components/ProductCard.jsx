@@ -7,8 +7,6 @@ export default function ProductCard({ garment }) {
   const pathname = location.pathname;
 
   function navigateToProductViewPage() {
-    // check if the location match the a specific route path
-    // if match, then navigate to the corresponding page
     if (pathname === "/clothes") {
       navigate("/clothes/" + garment.id);
       // } else if (pathname === "/shoes") {
