@@ -11,6 +11,8 @@ export default function CartLayout() {
         <h1 className="text-4xl">Shopping Cart ({count} items)</h1>
       </header>
 
+      <br />
+
       <Outlet />
     </>
   );
