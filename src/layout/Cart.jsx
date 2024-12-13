@@ -3,8 +3,6 @@ import { cartState } from "../states/cart";
 import { Outlet } from "react-router-dom";
 
 export default function CartLayout() {
-  const [cart, setCart] = useRecoilState(cartState);
-
   return (
     <>
       <header>
