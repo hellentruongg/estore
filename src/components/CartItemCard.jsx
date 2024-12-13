@@ -2,12 +2,13 @@ import { Button } from "flowbite-react";
 import { BsDashLg, BsPlusLg } from "react-icons/bs";
 import { useRecoilState } from "recoil";
 import { cartState } from "../states/cart";
+import { countState } from "../states/count";
 
 export default function CartItemCard({ cartItem }) {
   const { id, title, price, color, image } = cartItem.product;
   const { size, amount } = cartItem;
-
   const [cart, setCart] = useRecoilState(cartState);
+  const [count, setCount] = useRecoilState(countState);
 
   const foundCartItem = cart.find(
     (item) => item.product.id === id && item.size === size
@@ -23,6 +24,8 @@ export default function CartItemCard({ cartItem }) {
         }
       })
     );
+
+    setCount((prevCount) => prevCount + 1);
   }
 
   function decreaseAmount() {
@@ -30,6 +33,7 @@ export default function CartItemCard({ cartItem }) {
       setCart(
         cart.filter((item) => !(item.product.id === id && item.size === size))
       );
+      setCount((prevCount) => prevCount - 1);
     } else {
       setCart(
         cart.map((item) => {
@@ -40,6 +44,7 @@ export default function CartItemCard({ cartItem }) {
           }
         })
       );
+      setCount((prevCount) => prevCount - 1);
     }
   }
 
