@@ -1,12 +1,14 @@
-import { useRecoilState } from "recoil";
-import { cartState } from "../states/cart";
 import { Outlet } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { countState } from "../states/count";
 
 export default function CartLayout() {
+  const [count, setCount] = useRecoilState(countState);
+
   return (
     <>
       <header>
-        <h1 className="text-4xl">Shopping Cart</h1>
+        <h1 className="text-4xl">Shopping Cart ({count} items)</h1>
       </header>
 
       <Outlet />
