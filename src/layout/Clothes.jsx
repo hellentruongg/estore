@@ -13,10 +13,6 @@ export default function ClothesLayout() {
 
   return (
     <>
-      <header>
-        <h1 className="text-4xl">Clothes Page</h1>
-      </header>
-      <br />
       <Outlet />
     </>
   );

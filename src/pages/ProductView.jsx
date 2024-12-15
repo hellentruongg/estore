@@ -1,4 +1,4 @@
-import { Card, Button, Spinner } from "flowbite-react";
+import { Button, Spinner } from "flowbite-react";
 import { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
@@ -45,8 +45,6 @@ export default function ProductViewPage() {
     );
   }
 
-  const { title, price, color, sizes, image } = product;
-
   function createSizeButton(size) {
     return (
       <Button key={size} onClick={() => handleSize(size)} outline color="gray">
@@ -60,6 +58,8 @@ export default function ProductViewPage() {
     setSelectedSize(true);
     setErrorMessage("");
   }
+
+  const { title, price, color, sizes, image } = product;
 
   function addToCart() {
     if (!selectedSize) {
@@ -102,39 +102,52 @@ export default function ProductViewPage() {
     setCount(totalAmount);
   }
 
-  // Styling
+  const circle = {
+    height: "25px",
+    width: "25px",
+    backgroundColor: color,
+    borderRadius: "50%",
+    display: "inline-block",
+  };
 
   return (
     <>
-      <Card
-        className="max-w-sm"
-        imgAlt="Meaningful alt text for an image that is not purely decorative"
-        imgSrc={image}
-      >
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          {title}
-        </h5>
-        <p className="text-3xl font-bold text-gray-900 dark:text-white">
-          €{price}
-        </p>
+      <article className="flex gap-x-10 justify-center">
+        <img src={image} alt="product image" className="" />
 
-        <p className="text-l text-gray-900 dark:text-gray-400">
-          Color: <span>{color}</span>
-        </p>
-        <div>color</div>
+        <section className="flex flex-col gap-y-6">
+          <header>
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {title}
+            </h5>
+            <p className="text-3xl font-bold text-gray-900 dark:text-white">
+              €{price}
+            </p>
+          </header>
 
-        <p className="text-l text-gray-900 dark:text-gray-400">
-          {selectedSize ? `Chosen size: ${size}` : "Choose size:"}
-        </p>
+          <div>
+            <p className="text-l text-gray-900 dark:text-gray-400">
+              Color: <span>{color}</span>
+            </p>
+            <span style={circle}></span>
+          </div>
 
-        {errorMessage && (
-          <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
-        )}
-        <div className="flex flex-wrap gap-2">
-          {sizes.map((size) => createSizeButton(size))}
-        </div>
-        <Button onClick={addToCart}>Add to cart</Button>
-      </Card>
+          <div>
+            <p className="text-l text-gray-900 dark:text-gray-400">
+              {selectedSize ? `Chosen size: ${size}` : "Choose size:"}
+            </p>
+
+            {errorMessage && (
+              <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+            )}
+            <div className="flex flex-wrap gap-2">
+              {sizes.map((size) => createSizeButton(size))}
+            </div>
+          </div>
+
+          <Button onClick={addToCart}>Add to cart</Button>
+        </section>
+      </article>
     </>
   );
 }

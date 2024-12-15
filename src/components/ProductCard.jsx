@@ -1,4 +1,5 @@
 import { Card } from "flowbite-react";
+import { DiVim } from "react-icons/di";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ProductCard({ garment }) {
@@ -20,9 +21,16 @@ export default function ProductCard({ garment }) {
     <>
       <Card
         onClick={navigateToProductViewPage}
-        className="max-w-sm"
+        className="max-w-xs overflow-hidden"
         imgAlt="Meaningful alt text for an image that is not purely decorative"
-        imgSrc={garment.image}
+        // imgSrc={garment.image}
+        renderImage={() => (
+          <img
+            className="w-full h-96"
+            src={garment.image}
+            alt="product image"
+          />
+        )}
       >
         <h5 className="text-m font-semibold tracking-tight text-gray-900 dark:text-white">
           {garment.title}

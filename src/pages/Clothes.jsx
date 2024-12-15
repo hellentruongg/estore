@@ -12,7 +12,13 @@ export default function ClothesPage() {
 
   return (
     <>
-      <section>{clothes.map((garment) => createProductCard(garment))}</section>
+      <header>
+        <h1 className="text-4xl text-center">Clothes Page</h1>
+      </header>
+
+      <section className="flex flex-wrap gap-2.5 justify-center">
+        {clothes.map((garment) => createProductCard(garment))}
+      </section>
     </>
   );
 }

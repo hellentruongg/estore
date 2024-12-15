@@ -1,4 +1,4 @@
-import { Navbar, Badge } from "flowbite-react";
+import { Navbar } from "flowbite-react";
 import { BsCart3 } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
