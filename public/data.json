@@ -41,7 +41,7 @@
       "title": "Floral Ruffled Skirt",
       "category": "skirts",
       "image": "/images/garment-5.jpg",
-      "color": "White/Red",
+      "color": "White",
       "price": "29.99",
       "sizes": ["XS", "S", "M", "L"]
     },
@@ -59,7 +59,7 @@
       "title": "Leopard Fur Coat",
       "category": "coats",
       "image": "/images/garment-7.jpg",
-      "color": "Black/Brown",
+      "color": "Black",
       "price": "129.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
@@ -68,7 +68,7 @@
       "title": "Rockstar Blazer Skirt Set",
       "category": "sets",
       "image": "/images/garment-8.jpg",
-      "color": "Black/Silver",
+      "color": "Black",
       "price": "64.99",
       "sizes": ["XS", "S", "M", "L"]
     },
@@ -113,7 +113,7 @@
       "title": "Formal Glencheck Suit Set",
       "category": "sets",
       "image": "/images/garment-13.jpg",
-      "color": "Pink/Gray",
+      "color": "Pink",
       "price": "89.99",
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
